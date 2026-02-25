@@ -1,7 +1,18 @@
 public class PalindromeCheckerApp {
     static void main() {
-        System.out.println("Welcome to the Palindrome Checker Management Systsem");
-        System.out.println("Version : 1.0 ");
-        System.out.println("System Initialized Successfully ");
+        String str = "Madam";
+        boolean isPalindrome = true;
+        for (int i = 0; i < str.length()/2; i++){
+            if(str.charAt(i) != str.charAt(str.length() - 1-i){
+                isPalindrome = false;
+                break;
+            }
+        }
+        if (isPalindrome){
+            System.out.println(str + "is a Palindrome ");
+        } else{
+            System.out.println(str + "not a Palindrome ");
+        }
+
     }
 }
