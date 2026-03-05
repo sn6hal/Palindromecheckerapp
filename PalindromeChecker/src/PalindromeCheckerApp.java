@@ -1,20 +1,30 @@
-public class PalindromeCheckerApp {
-    static void main() {
-        String str = "Madam";
-        boolean isPalindrome = true;
-        int start = 0;
-        for (int i = str.length() - 1; i >0; i--){
-            if(str.charAt(i) != str.charAt(start)){
-                isPalindrome = false;
-                break;
-            }
-            start++;
-        }
-        if (isPalindrome){
-            System.out.println(str + "is a Palindrome ");
-        } else{
-            System.out.println(str + " is not a Palindrome ");
-        }
+package src;
 
+import java.util.Scanner;
+public class PalindromeCheckerApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string to check if it's a palindrome:");
+        String input = scanner.nextLine();
+        char[] charArray = input.toCharArray();
+        boolean isPalindrome = isPalindromeCharArray(charArray);
+        if (isPalindrome) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+        scanner.close();
+    }
+    public static boolean isPalindromeCharArray(char[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left < right) {
+            if (arr[left] != arr[right]) {
+                return false;  // Not a palindrome
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 }
